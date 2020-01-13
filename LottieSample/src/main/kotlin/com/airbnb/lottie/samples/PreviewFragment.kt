@@ -6,21 +6,19 @@ import android.app.AlertDialog
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
-import com.google.android.material.snackbar.Snackbar
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
-import androidx.core.app.ActivityCompat.requestPermissions
-import androidx.core.app.ActivityCompat.startActivityForResult
-import androidx.core.content.ContextCompat.startActivity
 import com.airbnb.epoxy.EpoxyController
-import com.airbnb.lottie.samples.R.id.coordinatorLayout
+import com.airbnb.lottie.samples.demo.DemoActivity
 import com.airbnb.lottie.samples.model.CompositionArgs
 import com.airbnb.lottie.samples.views.marquee
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_player.*
 
 private const val RC_FILE = 1000
 private const val RC_CAMERA_PERMISSION = 1001
+
 class PreviewFragment : BaseEpoxyFragment() {
 
     override fun EpoxyController.buildModels() {
@@ -95,12 +93,23 @@ class PreviewFragment : BaseEpoxyFragment() {
                         .show()
             }
         }
+
+        previewItemView {
+            id("demo")
+            title("Demo测试")
+            icon(R.drawable.ic_storage)
+            clickListener { _ ->
+                startActivity(Intent(context, DemoActivity::class.java));
+            }
+        }
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode != Activity.RESULT_OK) return
         when (requestCode) {
-            RC_FILE-> startActivity(PlayerActivity.intent(requireContext(), CompositionArgs(fileUri = data?.data)))
+            RC_FILE -> startActivity(PlayerActivity.intent(requireContext(), CompositionArgs(fileUri = data?.data)))
         }
     }
 

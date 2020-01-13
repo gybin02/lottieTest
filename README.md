@@ -1,3 +1,26 @@
+# 从Repo上copy一份测试lottie动画
+##使用
+```xml
+   <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/wishListIcon"doOd
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/heart" />
+```
+```java
+        //speed<0 逆序播放，比如取消点赞
+       wishListIcon.speed = if (activated) 1f else -2f
+       //复位进度
+        wishListIcon.progress = 0f
+        //开始播放
+        wishListIcon.playAnimation()
+```
+
+ 
+
 # Lottie for Android, [iOS](https://github.com/airbnb/lottie-ios), [React Native](https://github.com/airbnb/lottie-react-native), [Web](https://github.com/airbnb/lottie-web), and [Windows](https://aka.ms/lottie)
 [![Build Status](https://travis-ci.org/airbnb/lottie-android.svg?branch=master)](https://travis-ci.org/airbnb/lottie-android)
 
