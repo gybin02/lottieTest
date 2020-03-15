@@ -1,4 +1,4 @@
-# 从Repo上copy一份测试lottie动画
+# 从Repo上copy一份测试lottie动画, 包含点赞和 收藏动画
 ##使用
 ```xml
    <com.airbnb.lottie.LottieAnimationView
