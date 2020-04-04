@@ -1,5 +1,5 @@
-# 从Repo上copy一份测试lottie动画, 包含点赞和 收藏动画
-##使用
+# 测试
+## 测试1  从Repo上copy一份测试lottie动画, 包含点赞和 收藏动画
 ```xml
    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/wishListIcon"doOd
@@ -8,6 +8,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        //指定资源地址
         app:lottie_rawRes="@raw/heart" />
 ```
 ```java
@@ -19,7 +20,7 @@
         wishListIcon.playAnimation()
 ```
 
- 
+> LottieAnimationView 如果使用网络URL，当无网络的时候会崩溃，暂时没去跟踪
 
 # Lottie for Android, [iOS](https://github.com/airbnb/lottie-ios), [React Native](https://github.com/airbnb/lottie-react-native), [Web](https://github.com/airbnb/lottie-web), and [Windows](https://aka.ms/lottie)
 [![Build Status](https://travis-ci.org/airbnb/lottie-android.svg?branch=master)](https://travis-ci.org/airbnb/lottie-android)
